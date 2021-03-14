@@ -95,17 +95,23 @@
         $total_nilai = $nilai_uts + $nilai_uas + $nilai_tugas;
         $alphabet = $total_nilai / 3;
         if ($alphabet >= 85){
-            $grade = "A";
+            $grade = "A (Sangat Memuaskan)";
         }elseif ($alphabet >= 70)
-        {   $grade = "B";
-        }elseif ($alphabet >= 60)
-        {   $grade = "C";
-        }elseif ($alphabet >= 40)
-        {   $grade = "D";
+        {   $grade = "B (Memuaskan)";
+        }elseif ($alphabet >= 56)
+        {   $grade = "C (Cukup)";
+        }elseif ($alphabet >= 36)
+        {   $grade = "D (Kurang)";
         }else{
-            $grade = "E";
+            $grade = "E (Sangat Kurang)";
         }
 
+        if ($alphabet > 55){
+            $lulus = "Lulus";
+        }else {
+            $lulus = "Tidak Lulus";
+        }
+        
         $ns1 = ['id'=>1,'nim'=>'01101','uts'=>80,'uas'=>84,'tugas'=>78];
         $ns2 = ['id'=>2,'nim'=>'01121','uts'=>70,'uas'=>50,'tugas'=>68];
         $ns3 = ['id'=>3,'nim'=>'01130','uts'=>60,'uas'=>86,'tugas'=>70];
@@ -118,8 +124,8 @@
     ?>
     <div class="container mt-5 mb-5 p-5 shadow" style="background-color:#e2d5d5;">
         <div class="row p-1 ">
-            <div class="col-6 mt-3">
-                <div class="card ml-5" style="width: 25rem;">
+            <div class="col-4 mt-3">
+                <div class="card ml-5" style="width: 20rem;">
                     <div class="card-header bg-secondary text-white" style="font-weight: bold; font-size: 20px;">Hasil</div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Nama : <?= @$nama ?></li>
@@ -130,21 +136,35 @@
                         <li class="list-group-item">Nilai Tugas: <?=@$nilai_tugas ?></li>
                         <li class="list-group-item">Total Nilai: <?=@$total_nilai ?></li>
                         <li class="list-group-item">Grade: <?=@$grade ?></li>
+                        <li class="list-group-item">Dinyatakan: <?=@$lulus ?></li>
                     </ul>    
                 </div>        
             </div>
-            <div class="col-6 mt-3">
-                <div class="card ml-4" style="width: 25rem;">
-                    <div class="card-header bg-secondary text-white" style="font-weight: bold; font-size: 20px;"">Nilai</div>
+            <div class="col-4 mt-3">
+                <div class="card ml-5" style="width: 17rem;">
+                    <div class="card-header bg-secondary text-white" style="font-weight: bold; font-size: 20px;"">Range Nilai</div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">A : 85 - 100</li>
                         <li class="list-group-item">B : 70 -84</li>
-                        <li class="list-group-item">C: 60-79</li>
-                        <li class="list-group-item">D : 40 - 59 </li>
-                        <li class="list-group-item">C : Kurang dari 40 </li>
+                        <li class="list-group-item">C: 56-69</li>
+                        <li class="list-group-item">D : 36 - 55 </li>
+                        <li class="list-group-item">E : Kurang dari 35 </li>
                     </ul>
                 </div>
-            </div>  
+            </div> 
+            <div class="col-4 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header bg-secondary text-white" style="font-weight: bold; font-size: 20px;"">Predikat</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sangat Memuaskan</li>
+                            <li class="list-group-item">Memuaskan</li>
+                            <li class="list-group-item">Cukup</li>
+                            <li class="list-group-item">Kurang</li>
+                            <li class="list-group-item">Sangat Kurang</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
         </div>     
     </div>        
 
