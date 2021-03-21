@@ -135,6 +135,7 @@
                             <li class="list-group-item">Nilai UAS: <?=@$nilai_uas ?></li>
                             <li class="list-group-item">Nilai Tugas: <?=@$nilai_tugas ?></li>
                             <li class="list-group-item">Total Nilai: <?=@$total_nilai ?></li>
+                            <li class="list-group-item">Nilai Rata-Rata: <?=@$total_nilai / 3?></li>
                             <li class="list-group-item">Grade: <?=@$grade ?></li>
                             <li class="list-group-item">Dinyatakan: <?=@$lulus ?></li>
                         </ul>    
